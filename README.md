@@ -6,12 +6,7 @@
 - [Visibility Graph](#visibility-graph)
 - [Vector Visibility Graph](#vector-visibility-graph)
 - [System Requirements](#system-requirements)
-  - [Clone](#clone)
-  - [Packages](#packages)
-  - [Environments](#environments)
 - [Reproduce](#reproduce)
-  - [Visibility Graph](#visibility-graph)
-  - [Vector Visibility Graph](#vector-visibility-graph)
 - [Information](#information)
 
 # Overview
@@ -113,7 +108,6 @@ To execute the file, simply run the command below.
 ```
 python example_ecg.py
 ```
-
 
 ## Vector Visibility graph VVG
 
