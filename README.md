@@ -1,5 +1,14 @@
 # Visibility Graph e Vector Visibility Graph
 
+# Summary
+
+- [Overview](#overview)
+- [Visibility Graph](#visibility-graph)
+- [Vector Visibility Graph](#vector-visibility-graph)
+- [System Requirements](#system-requirements)
+- [Reproduce](#reproduce)
+- [Information](#information)
+
 # Overview
 
 This repository presents the implementation of two methods for converting time series into graphs. This methods were used with Graph Convolutional Networks ([GCN](https://tkipf.github.io/graph-convolutional-networks/)) for arrhythmia classification on my Master's thesis in Computer Science at the Federal University of Ouro Preto. The data used here was [MIT-BIH (The Massachusetts Institute of Technology - Beth Israel Hospital Arrhythmia Database)](https://physionet.org/content/mitdb/1.0.0/).
