@@ -1,12 +1,17 @@
 # ts2vvg
 
+![GitHub](https://img.shields.io/github/license/raffoliveira/VG_VVG_implementation)
+![GitHub last commit](https://img.shields.io/github/last-commit/raffoliveira/VG_VVG_implementation)
+![GitHub stars](https://img.shields.io/github/stars/raffoliveira/VG_VVG_implementation?style=social)
+![GitHub downloads](https://img.shields.io/github/downloads/raffoliveira/VG_VVG_implementation/total)
+
 ts2vvg: a Python package with the implementation of the Vector Visibility Graph (VVG) [(REN and JIN, 2019)](https://link.springer.com/article/10.1007/s11071-019-05147-7), to convert multivariate time series into graphs. 
 
 Author: Rafael Oliveira. 
 
 Last updated: 2024.02.29.
 
-If you use this package, cite the following paper:
+If you use this package, please cite the following paper:
 
 `REF Software impacts`
 
@@ -20,7 +25,7 @@ If you use this package, cite the following paper:
 # Vector Visibility Graph
 
   
-The VVG is based on the [Visibiility Graph (VG)](https://www.pnas.org/doi/abs/10.1073/pnas.0709247105), that has a well-known package, the [ts2vg](https://pypi.org/project/ts2vg/). We propose here an implementation for VVG, using numpy and networkX libraries. Find below an illustration of how the algorithm works, from an input multivariate time series to the resulting directed network.
+The VVG is based on the [Visibiility Graph (VG)](https://www.pnas.org/doi/abs/10.1073/pnas.0709247105), available in the well-known package [ts2vg](https://pypi.org/project/ts2vg/). We propose here an implementation for VVG, using numpy and networkX libraries. Find below an illustration of how the algorithm works, from an input multivariate time series to the resulting directed network.
 
 ![vvg](./docs/vvg.png)
 
