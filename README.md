@@ -1,11 +1,11 @@
 # ts2vvg
 
-![GitHub](https://img.shields.io/github/license/raffoliveira/VG_VVG_implementation)
-![GitHub last commit](https://img.shields.io/github/last-commit/raffoliveira/VG_VVG_implementation)
-![GitHub stars](https://img.shields.io/github/stars/raffoliveira/VG_VVG_implementation?style=social)
-![GitHub downloads](https://img.shields.io/github/downloads/raffoliveira/VG_VVG_implementation/total)
+![GitHub](https://img.shields.io/github/license/raffoliveira/ts2vvg)
+![GitHub last commit](https://img.shields.io/github/last-commit/raffoliveira/ts2vvg)
+![GitHub stars](https://img.shields.io/github/stars/raffoliveira/ts2vvg?style=social)
+![GitHub downloads](https://img.shields.io/github/downloads/raffoliveira/ts2vvg/total)
 
-ts2vvg: a Python package with the implementation of the Vector Visibility Graph (VVG) [(REN and JIN, 2019)](https://link.springer.com/article/10.1007/s11071-019-05147-7), to convert multivariate time series into graphs. 
+ts2vvg: a Python package with an implementation of the Vector Visibility Graph (VVG) [(REN and JIN, 2019)](https://link.springer.com/article/10.1007/s11071-019-05147-7), to convert multivariate time series into graphs. 
 
 Author: Rafael Oliveira. 
 
@@ -36,7 +36,7 @@ Source: Adapted from (REN and JIN, 2019).
 To install the ts2vvg package in a Python environment:
 
 ```shell
-pip install git+https://github.com/raffoliveira/VG_VVG_implementation@main
+pip install git+https://github.com/raffoliveira/ts2vvg@main
 ```
 
 ## Requirements
