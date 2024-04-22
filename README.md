@@ -17,10 +17,14 @@ If you use this package, please cite the following paper:
 
 # Summary
 
+- [ts2vvg](#ts2vvg)
+- [Summary](#summary)
 - [Vector Visibility Graph](#vector-visibility-graph)
 - [Installation](#installation)
+  - [Requirements](#requirements)
 - [Running example](#running-example)
-- [Usage in real projects](#usage-in-real-projects)
+- [Usage in real projects:](#usage-in-real-projects)
+- [References](#references)
 
 # Vector Visibility Graph
 
@@ -49,14 +53,19 @@ The required packages are listed below:
 
 # Running example
 
-We provide a simple example to demonstrate the conversion of a multivariate time series into a graph. The data are available in two pickle files: `time_series_1.pkl` and `time_series_2.pkl`, whose values are [5.5, 4.3, 1.0, 7.8, 2.7, 1.2, 3.6, 2.2, 7.1, 5.3] and [0.6, 3.6, 0.1, 4.3, 6.4, 2.1, 1.6, 4.5, 8.2, 6.6], respectively. The result is the following graph:
+We provide a simple example to demonstrate the conversion of a multivariate time series into a graph. The data are available in two pickle files: `time_series_example_1.pkl` and `time_series_example_2.pkl`, whose values are [5.5, 4.3, 1.0, 7.8, 2.7, 1.2, 3.6, 2.2, 7.1, 5.3] and [0.6, 3.6, 0.1, 4.3, 6.4, 2.1, 1.6, 4.5, 8.2, 6.6], respectively. The result is the following graph:
 
 ![graph](./example/graph.png)
 
-To run the the example:
+To run the example, move to the `example` directory:
+```
+cd .\example
+```
+
+and execute the code below in the terminal:
 
 ```
-python example_simple.py
+python example.py
 ```
 
 # Usage in real projects:
