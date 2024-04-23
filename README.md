@@ -48,19 +48,36 @@ pip install git+https://github.com/raffoliveira/ts2vvg@main
 
 ## Requirements
 
-The required packages are listed below: 
+The required package for ts2vvg is:
+
++ numpy==1.26.4
+
+To run the example:
 
 + matplotlib==3.8.3
 + networkx==3.2.1
-+ numpy==1.26.4
 
 # Running example
 
-We provide a simple example to demonstrate the conversion of a multivariate time series into a graph. The data are available in two pickle files: `time_series_example_1.pkl` and `time_series_example_2.pkl`, whose values are [5.5, 4.3, 1.0, 7.8, 2.7, 1.2, 3.6, 2.2, 7.1, 5.3] and [0.6, 3.6, 0.1, 4.3, 6.4, 2.1, 1.6, 4.5, 8.2, 6.6], respectively. The result is the following graph:
+We provide a simple example to demonstrate the conversion of a multivariate time series into a graph. Input data $X=[\{8,5\}, \{2,1.5\}, \{13,13\}, \{11,9.5\}, \{7,6\}]$, a 2-dimensional time series of 5 points:
+
+```python
+from ts2vvg.graph import build_graph
+
+time_series_1 = [8.0, 2.0, 13.0, 11.0, 7.0]
+time_series_2 = [5.0, 1.5, 13.0, 9.5, 6.0]
+
+adj_list = build_graph(series=(time_series_1, time_series_2), time_direction=False)
+```
+
+- ```series```: A tuple with the time series;
+- ```time_direction```: True if edges are allowed only between time steps $t_a$ to $t_b$, for $t_a < t_b$. False otherwise.
+
+The result is the following graph:
 
 ![graph](./example/graph.png)
 
-To run the example, move to the `example` directory:
+To run the example, open the `example` directory:
 ```
 cd .\example
 ```
@@ -70,6 +87,8 @@ and execute the code below in the terminal:
 ```
 python example.py
 ```
+
+
 
 # Usage in real projects:
 
