@@ -1,9 +1,21 @@
-# ts2vvg
 
 ![GitHub](https://img.shields.io/github/license/raffoliveira/ts2vvg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/raffoliveira/ts2vvg)
 ![GitHub stars](https://img.shields.io/github/stars/raffoliveira/ts2vvg?style=social)
 ![GitHub downloads](https://img.shields.io/github/downloads/raffoliveira/ts2vvg/total)
+
+
+# Contents
+
+- [ts2vvg](#ts2vvg)
+- [Vector Visibility Graph](#vector-visibility-graph)
+- [Installation](#installation)
+- [Running example](#running-example)
+- [Usage in real projects:](#usage-in-real-projects)
+- [References](#references)
+
+
+# ts2vvg
 
 ts2vvg: a Python package with an implementation of the Vector Visibility Graph (VVG) [(REN and JIN, 2019)](https://link.springer.com/article/10.1007/s11071-019-05147-7), to convert multivariate time series into graphs. 
 
@@ -15,16 +27,7 @@ If you use this package, please cite the following paper:
 
 `REF Software impacts`
 
-# Summary
 
-- [ts2vvg](#ts2vvg)
-- [Summary](#summary)
-- [Vector Visibility Graph](#vector-visibility-graph)
-- [Installation](#installation)
-  - [Requirements](#requirements)
-- [Running example](#running-example)
-- [Usage in real projects:](#usage-in-real-projects)
-- [References](#references)
 
 # Vector Visibility Graph
 
