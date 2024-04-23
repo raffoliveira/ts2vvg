@@ -3,72 +3,80 @@ from collections import defaultdict
 import numpy as np
 
 
-def __projection_vectors_vvg(series_a: np.ndarray, series_b: np.ndarray, norm_a: float) -> float:
+def __projection_vectors_vvg(Xa: np.ndarray, Xb: np.ndarray, norm_Xa: float) -> float:
     """calculate the projection
 
     Args:
-        series_a: time series 
-        series_b: time series 
-        norm_a: vector norm
+        Xa: time series 
+        Xb: time series 
+        norm_Xa: vector norm
 
     Returns:
         float: result of projection
     """
 
-    return np.dot(series_a, series_b) / norm_a
+    return np.dot(Xa, Xb) / norm_Xa
 
 
-def __criteria_vvg(series_a: np.ndarray,
-                   series_b: np.ndarray,
-                   series_c: np.ndarray,
-                   time_a: int,
-                   time_b: int,
-                   time_c: int) -> bool:
+def __criteria_vvg(Xa: np.ndarray,
+                   Xb: np.ndarray,
+                   Xc: np.ndarray,
+                   ta: int,
+                   tb: int,
+                   tc: int) -> bool:
     """calculate criteria of visibility graph 
 
     Args:
-        series_a: time_series 
-        series_b: time_series 
-        series_c: time_series 
-        time_a: time of series 
-        time_b: time of series 
-        time_c: time of series 
+        Xa: time_series 
+        Xb: time_series 
+        Xc: time_series 
+        ta: time of series 
+        tb: time of series 
+        tc: time of series 
 
     Returns:
         bool: True if the criteria is satisfied, False otherwise
     """
-    proj_aa = float(np.linalg.norm(series_a))
-    proj_ab = __projection_vectors_vvg(series_a, series_b, proj_aa)
-    proj_ac = __projection_vectors_vvg(series_a, series_c, proj_aa)
-    time_frac = (time_b - time_c) / (time_b - time_a)
-    vg = proj_ab + (proj_aa - proj_ab) * time_frac
-    return proj_ac < vg
+    Xaa = float(np.linalg.norm(Xa))
+    Xab = __projection_vectors_vvg(Xa, Xb, Xaa)
+    Xac = __projection_vectors_vvg(Xa, Xc, Xaa)
+    time_frac = (tb - tc) / (tb - ta)
+    vis_criterion = Xab + (Xaa - Xab) * time_frac
+    #print(f'{ta=},{tb=},{tc=}:  {Xac=} < {vis_criterion=} == {Xac < vis_criterion}')
+    return Xac < vis_criterion
 
 
-def build_graph(series: tuple) -> dict:
+def build_graph(series: tuple, time_direction: False) -> dict:
     """calculate the visibility graph of the two series
 
     Args:
         series: time_series with n-dimensional. 
         Must be in tuple format ([series_1], [series_2], [series_3], ..., [series_n])
+        time_direction: True if only connections from ta to tb are allowed, with ta < tb
 
     Returns:
         dict: adjacency list of the visibility graph
     """
 
     adjacency_list = defaultdict(list)
-    all_samples = np.column_stack(series)
+    X = np.column_stack(series)
 
-    for i, sample_i in enumerate(all_samples):
-        for s, sample_s in enumerate(all_samples[i + 1:], start=i + 1):
-            if s == i + 1:
-                adjacency_list[i].append(s)
-                adjacency_list[s].append(i)
+    #print(f'Vector norms = {[float(np.linalg.norm(Xa)) for ta, Xa in enumerate(X)]}')
+
+    for ta, Xa in enumerate(X):
+        for tb, Xb in enumerate(X[ta + 1:], start=ta + 1):
+            if tb == ta + 1:
+                adjacency_list[ta].append(tb)
+                if(not time_direction):
+                    adjacency_list[tb].append(ta)
             else:
-                for t, sample_t in enumerate(all_samples[i + 1:s], start=i + 1):
-                    if __criteria_vvg(series_a=sample_i, series_b=sample_s, series_c=sample_t,
-                                      time_a=i, time_b=s, time_c=t):
-                        adjacency_list[i].append(s)
-                        adjacency_list[s].append(i)
-                        break
+                criteria_fullfiled = True # No vector Xc should "block" the visibility between Xa and Xb
+                for tc, Xc in enumerate(X[ta + 1:tb], start=ta + 1):
+                    #print(f'{ta=} {tb=} {tc=}  {Xa=} {Xb=} {Xc=}')
+                    if __criteria_vvg(Xa=Xa, Xb=Xb, Xc=Xc, ta=ta, tb=tb, tc=tc) == False:
+                        criteria_fullfiled = False
+                if(criteria_fullfiled):
+                    adjacency_list[ta].append(tb)
+                    if(not time_direction):
+                        adjacency_list[tb].append(ta)
     return adjacency_list
