@@ -59,7 +59,7 @@ To run the example:
 
 # Running example
 
-We provide a simple example to demonstrate the conversion of a multivariate time series into a graph. Input data $X=[\{8,5\}, \{2,1.5\}, \{13,13\}, \{11,9.5\}, \{7,6\}]$, a 2-dimensional time series of 5 points:
+We provide a simple example to demonstrate the conversion of a multivariate time series into a graph. Input data $`X=[\{8,5\}, \{2,1.5\}, \{13,13\}, \{11,9.5\}, \{7,6\}]`$, a 2-dimensional time series of 5 points:
 
 ```python
 from ts2vvg.graph import build_graph
