@@ -30,7 +30,7 @@ Oliveira, R. F., Moreira, G. J. P., Freitas, V. L. S., and Luz, E. J. S. Leverag
 # Vector Visibility Graph
 
   
-The VVG is based on the [Visibiility Graph (VG)](https://www.pnas.org/doi/abs/10.1073/pnas.0709247105), available in the well-known package [ts2vg](https://pypi.org/project/ts2vg/). We propose here an implementation for VVG, using numpy and networkX libraries. Find below an illustration of how the algorithm works, from an input multivariate time series to the resulting directed network.
+The VVG is based on the [Visibiility Graph (VG)](https://www.pnas.org/doi/abs/10.1073/pnas.0709247105), which is available in the well-known package [ts2vg](https://pypi.org/project/ts2vg/). We propose here an implementation for VVG, using numpy and networkX libraries. Find below an illustration of how the algorithm works, from an input multivariate time series to the resulting directed network.
 
 ![vvg](./docs/vvg.png)
 
