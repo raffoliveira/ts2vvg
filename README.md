@@ -90,11 +90,9 @@ python example.py
 
 # Usage in real projects:
 
-- **Leveraging Visibility Graphs for Enhanced Arrhythmia Classification** [paper](https://arxiv.org/abs/2404.15367) [code](https://github.com/raffoliveira/VG_for_arrhythmia_classification_with_GCN).
+- Leveraging Visibility Graphs for Enhanced Arrhythmia Classification [paper](https://arxiv.org/abs/2404.15367) [code](https://github.com/raffoliveira/VG_for_arrhythmia_classification_with_GCN).
 
 
 # References
-
-Oliveira, R. F., Moreira, G. J. P., Freitas, V. L. S., and Luz, E. J. S. Leveraging Visibility Graphs for Enhanced Arrhythmia Classification with Graph Convolutional Networks, arXiv e-prints, 2024. doi:10.48550/arXiv.2404.15367.
 
 Ren, W., Jin, N. Vector visibility graph from multivariate time series: a new method for characterizing nonlinear dynamic behavior in two-phase flow. Nonlinear Dyn 97, 2547–2556 (2019). https://doi.org/10.1007/s11071-019-05147-7
