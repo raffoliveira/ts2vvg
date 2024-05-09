@@ -23,7 +23,7 @@ setup(
     name='ts2vvg',
     version=get_version("ts2vvg/__init__.py"),
     description='Implementation of Vector Visibility Graph (VVG), an algorithm to convert multivariate time series into a graph',
-    url='https://github.com/raffoliveira/VG_VVG_implementation',
+    url='https://github.com/raffoliveira/ts2vvg',
     author='Rafael F. Oliveira',
     author_email='rafaelollywer@gmail.com',
     packages=['ts2vvg'],
