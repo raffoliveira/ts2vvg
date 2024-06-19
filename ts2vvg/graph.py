@@ -15,7 +15,14 @@ def __projection_vectors_vvg(Xa: np.ndarray, Xb: np.ndarray, norm_Xa: float) -> 
         float: result of projection
     """
 
-    return np.dot(Xa, Xb) / norm_Xa
+    try:
+        if norm_Xa == 0:
+            norm_Xa = 1e-10
+        proj = np.dot(Xa, Xb) / norm_Xa
+        return proj
+    except Exception as err:
+        print(f"Projeção não foi possível de ser calculada por causa de {err}")
+    return 0.0
 
 
 def __criteria_vvg(Xa: np.ndarray,
