@@ -34,6 +34,7 @@ The VVG is based on the [Visibiility Graph (VG)](https://www.pnas.org/doi/abs/10
 
 ![vvg](./docs/ts2vvg.png)
 
+
 Source: Adapted from (REN and JIN, 2019).
 
 # Installation
@@ -74,6 +75,7 @@ adj_list = build_graph(series=(time_series_1, time_series_2), time_direction=Fal
 The result is the following graph:
 
 ![graph](./example/graph.png)
+
 
 To run the example, open the `example` directory:
 ```
